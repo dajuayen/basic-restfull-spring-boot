@@ -2,6 +2,7 @@ package com.djuaneda.prueba.controllers;
 
 
 import com.djuaneda.prueba.models.Usuario;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,7 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @PostMapping("") // Create
+    @ApiOperation(value = "Create User", notes = "${Usuario.create.notes}")
     public ResponseEntity<Usuario> create(@RequestParam(value = "nombre") String nombre,
                                           @RequestParam(value = "apellidos") String apellidos,
                                           @RequestParam(value = "direccion") String direccion,
@@ -35,6 +37,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/{id}") // Read
+    @ApiOperation(value = "Read User", notes = "${Usuario.read.notes}")
     public ResponseEntity<Usuario> read(@PathVariable Integer id) {
         Usuario usr = null;
         try{
@@ -50,6 +53,7 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}") // Update
+    @ApiOperation(value = "Update User", notes = "${Usuario.update.notes}")
     public ResponseEntity<Usuario> update(@PathVariable Integer id,
                           @RequestParam(value = "nombre") String nombre,
                           @RequestParam(value = "apellidos") String apellidos,
@@ -69,6 +73,7 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/{id}") // Delete
+    @ApiOperation(value = "Remove User", notes = "${Usuario.remove.notes}")
     public ResponseEntity<String> remove(@PathVariable Integer id) {
         try{
             usuarioService.removeUsuario(id);
@@ -81,6 +86,11 @@ public class UsuarioController {
     }
 
     @GetMapping("") // Listado de usuarios activos
+    @ApiOperation(
+            value = "List User",
+            notes = "${Usuario.listar.notes}",
+            response = Usuario.class,
+            responseContainer = "List")
     public ResponseEntity<List<Usuario>> listar(Model model) {
         List<Usuario> usuarios = null;
         try{
