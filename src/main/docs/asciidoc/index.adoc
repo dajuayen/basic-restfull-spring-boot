@@ -1,0 +1,18 @@
+= Aplicación RestFull básica desarrollada en Spring-Boot
+
+This is an example output for a service running at http://localhost:8080/usuarios/
+
+
+.paths
+include::{snippets}/paths.adoc[]
+
+.definitions
+include::{snippets}/http-request.adoc[]
+
+.overview
+include::{snippets}/overview.adoc[]
+
+.security
+include::{snippets}/security.adoc[]
+
+As you can see the format is very simple, and in fact you always get the same message.
