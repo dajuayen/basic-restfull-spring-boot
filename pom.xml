@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -13,6 +14,10 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>prueba</name>
 	<description>Prueba de nivel de David Juaneda </description>
+
+	<modules>
+		<module>salas</module>
+	</modules>
 
 	<properties>
 		<maven.deploy.skip>true</maven.deploy.skip>
@@ -118,7 +123,7 @@
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
-			<version>2.1.4.RELEASE</version>
+			<version>[2.1.8,)</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -135,7 +140,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.9.6</version>
+			<version>[2.9.9.1,)</version>
 		</dependency>
 
 		<dependency>
