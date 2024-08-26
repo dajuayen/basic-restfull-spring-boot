@@ -36,7 +36,7 @@
 
 		<swagger.input>${swagger.output.dir}/swagger.json</swagger.input>
 		<jackson.version>2.9.6</jackson.version>
-		<springfox.version>2.9.2</springfox.version>
+		<springfox.version>2.10.0</springfox.version>
 
 	</properties>
 
